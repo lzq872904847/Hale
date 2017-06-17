@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <style>
-        *{
-
-        }
-    </style>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="lib/JQ/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/respond.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/html5shiv.min.js"></script>
 </head>
 <body>
 	<header>
         <nav>
-            <a href="#">北京</a>
+            <span class="urls">北京</span>
             <span>[<a href="#">切换城市</a>]</span>
-            <span>同城帮首页</span>
+            <a href="#">同城帮首页</a>
             <ul>
                 <li><a href="#">登录</a></li>
                 <li><a href="#">注册</a></li>
@@ -39,28 +39,29 @@
         </ul>
         <img src="" alt="" class="hot">
     </nav>
-    <div id="lunbo">
-        <div id="lunboDiv"></div>
+    <div id="lunbo" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators"></ol>
+        <div id="lunboDiv" class="carousel-inner" role="listbox"></div>
         <div id="lunboShow">
             <div>
                 <img src="images/2_03.png" alt="">
                 <span class="buy">修手机/Pad</span>
-                <span class="lun">＞</span>
+                <span class="lun glyphicon glyphicon-menu-right"></span>
             </div>
             <div>
                 <img src="images/2_06.png" alt="">
                 <span class="buy">修电脑</span>
-                <span class="lun">＞</span>
+                <span class="lun glyphicon glyphicon-menu-right"></span>
             </div>
             <div>
                 <img src="images/2_08.png" alt="">
                 <span class="buy">卖手机/电脑</span>
-                <span class="lun">＞</span>
+                <span class="lun glyphicon glyphicon-menu-right"></span>
             </div>
             <div>
                 <img src="images/2_10.png" alt="">
                 <span class="buy">买二手手机</span>
-                <span class="lun">＞</span>
+                <span class="lun glyphicon glyphicon-menu-right"></span>
             </div>
         </div>
     </div>
@@ -93,10 +94,10 @@
         <div id="centerLeft">
             <div id="site">
                 <div id="province">
-                    <span>北京</span>
+                    <span>北京<i class="glyphicon glyphicon-triangle-bottom"></i></span>
                 </div>
                 <div id="county">
-                    <span>选择区县</span>
+                    <span>选择区县<i class="glyphicon glyphicon-triangle-bottom"></span>
                 </div>
                 <input type="text" placeholder="输入您的位置查找附近的商家">
                 <button>搜索</button>
@@ -156,18 +157,43 @@
                 <img src="images/42.png" alt="">
                 <span>商家合作</span>
                 <ul>
-                    <li><a href="#">加盟同城帮</a></li>
+                    <li><a href="#" class="blue">加盟同城帮</a></li>
                     <li><a href="#">新闻采访/跨界合作</a></li>
                 </ul>
             </div>
         </div>
-        <p>客服电话:4000-399-360/010-53767360
-            <a href="#">投诉建议</a><a href="#">网站地图</a>
+        <p><span>客服电话:4000-399-360/010-53767360</span>
+            <a href="#" class="footA">投诉建议</a><a href="#" class="footA">网站地图</a>
         </p>
-        <p>Copyright©2005-2017 360.CNAij Rights 360安全中心</p>
-        <p>京ICP备08010314号-19 京公网安备110000000006号</p>
+        <p><span>Copyright©2005-2017</span><spqn>360.CNAij Rights</spqn><span>360安全中心</span></p>
+        <p><span>京ICP备08010314号-19</span><span>京公网安备110000000006号</span></p>
     </footer>
     <div id="goTop"></div>
     <div id="service"></div>
 </body>
+<script>
+    $(function(){
+        $.ajax({
+            url:"json/lunbo.json",
+            success(a){
+                for(var i=0;i< a.length;i++){
+                    var li=$("<li></li>");
+                    li.appendTo($("#lunbo ol"));
+                    li.attr("data-target","#lunbo");
+                    li.attr("data-slide-to",i);
+                    var div=$("<div></div>");
+                    div.appendTo($("#lunboDiv"));
+                    div.addClass("item");
+                    var img=$("<img>");
+                    img.appendTo(div);
+                    img.attr("src",a[i].src);
+                    if(i==0){
+                        li.addClass("active");
+                        div.addClass("active");
+                    }
+                }
+            }
+        })
+    });
+</script>
 </html>

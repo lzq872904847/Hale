@@ -39,7 +39,14 @@ var gulp = require("gulp"),
             })
             .pipe(gulp.dest("dist/css"));
     });
-
+    gulp.task("lib",function(){
+        return gulp.src("src/lib/**")
+            .pipe(gulp.dest("dist/lib"));
+    });
+    gulp.task("json",function(){
+        return gulp.src("src/json/**")
+            .pipe(gulp.dest("dist/json"));
+    });
     gulp.task("imagemin",function(){
         return gulp.src("src/images/**/*.{png,jpg,gif,svg}")
             .pipe(change("dist/images"))
@@ -68,4 +75,4 @@ var gulp = require("gulp"),
         gulp.watch("src/images/**/*.{png,jpg,gif,svg}",["imagemin"]);
         gulp.watch('src/**/*.html',["htmlmin"]);
     });
-gulp.task("default",["imagemin","js","script","webserver","watch"]);
+gulp.task("default",["lib","json","js","script","webserver","watch"]);
