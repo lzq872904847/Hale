@@ -2,3 +2,4 @@ node_modules/
 .sass-csche/
 dist/
 .idea/
+.sass-cache/

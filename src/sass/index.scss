@@ -1,0 +1,223 @@
+@mixin WH($width,$height){
+  width: $width;
+  height: $height;
+}
+@mixin position($pos,$top,$left,$zIn){
+  position: $pos;
+  top: $top;
+  left: $left;
+  z-index: $zIn;
+}
+@mixin flex{
+  display: flex;
+  justify-content: space-around;
+}
+$bianjie:1px solid #C7C7C7;
+*{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #303030;
+}
+a:hover{
+  text-decoration: underline;
+}
+.red{
+  color: red;
+}
+header{
+ @include WH(100%,33px);
+  background-color: #F6F6F6;
+  border-bottom: $bianjie;
+}
+header nav{
+  @include WH(1200px,33px);
+  line-height: 33px;
+  margin: auto;
+}
+header ul,#navDiv ul{
+  float: right;
+}
+header ul li,#navDiv ul li,#navDiv img,header span,header nav>a{
+  float: left;
+}
+header li,header span,#navDiv li{
+  margin-right: 20px;
+}
+header span{
+  margin-left: 5px;
+}
+#navDiv{
+  @include WH(1200px,80px);
+  margin: auto;
+  line-height: 80px;
+}
+#lunbo{
+  @include WH(1200px,340px);
+  margin: auto;
+  background-color: red;
+}
+#lunboDiv{
+  height: 340px;
+  float: left;
+}
+#lunboShow{
+  @include WH(235px,340px);
+  float: left;
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+}
+#lunboShow div{
+  @include WH(235px,84px);
+  line-height: 84px;
+  border-bottom: $bianjie;
+}
+#lunboShow img{
+  opacity: 0.6;
+  float: left;
+  margin: 4px 15px 0 10px;
+}
+#lunboShow .lun{
+  float: right;
+  margin-right: 30px;
+}
+#bg{
+  background-color: #F7F7F7;
+}
+#show{
+  @include WH(1200px,166px);
+  margin: auto;
+}
+.showDiv{
+  @include WH(1200px,301px);
+  margin: auto;
+}
+#show div,.showDiv div{
+  border-right: $bianjie;
+  float: left;
+}
+#show div img,.showDiv div img{
+  background-size: 100% 100%;
+}
+.shopP{
+  @include WH(1200px,50px);
+  margin: auto;
+  margin-top: 18px;
+  line-height: 50px;
+  font-size: 24px;
+}
+#centerDiv{
+  width: 1200px;
+  margin: auto;
+}
+#centerLeft{
+  width: 890px;
+  margin-right: 40px;
+  float: left;
+}
+#site{
+  @include WH(890px,42px);
+  margin: 20px 0;
+}
+#site div{
+  @include WH(120px,20px);
+  border: 1px solid #185;
+  float: left;
+  margin-right: 8px;
+  line-height: 20px;
+  padding: 10px;
+}
+#site input{
+  @include WH(452px,40px);
+  border: 1px solid #185;
+  float: left;
+  padding-left: 15px;
+}
+#site button{
+  @include WH(120px,42px);
+  border: none;
+  background-color: #185;
+  float: left;
+  color: white;
+  font-size: 22px;
+}
+#sort{
+  @include WH(888px,42px);
+  border: $bianjie;
+  line-height: 42px;
+  background-color: #F7F7F7;
+}
+.sortDiv,.sortDivs{
+  @include WH(120px,40px);
+  float: left;
+  border: 1px solid rgba(0,0,0,0);
+  text-align: center;
+}
+.sortDivs{
+  border-left: none;
+}
+#map{
+  @include WH(120px,22px);
+  float: right;
+  margin: 10px;
+}
+#centerRight{
+  width: 270px;
+  float: right;
+  margin-top: 82px;
+}
+#evaluate{
+  @include WH(268px,42px);
+  float: right;
+  border: $bianjie;
+  background-color: #F7F7F7;
+  font-size: 22px;
+  text-align: center;
+  line-height: 42px;
+}
+footer{
+  @include WH(100%,290px);
+  border-top: $bianjie;
+  background-color: #F7F7F7;
+  float: left;
+  text-align: center;
+  color: gray;
+}
+#footDiv{
+  @include WH(1200px,130px);
+  margin: auto;
+  margin-top: 25px;
+  border-bottom: $bianjie;
+  @include flex;
+  margin-bottom: 40px;
+}
+.footShow{
+  width: 180px;
+  float: left;
+}
+.footShow img{
+  float: left;
+}
+.footShow span{
+  font-size: 18px;
+  font-weight: bold;
+  float: left;
+  margin: 10px;
+}
+.footShow ul{
+  float: left;
+  font-size: 12px;
+  margin-left: 54px;
+}
+.footShow ul li{
+  text-align: left;
+  margin-top: 10px;
+}
+footer p{
+  margin-bottom: 10px;
+}

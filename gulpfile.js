@@ -3,6 +3,7 @@
  */
 var gulp = require("gulp"),
     livereload = require("gulp-livereload"),
+    htmlmin=require("gulp-htmlmin"),
     webserver = require("gulp-webserver"),
     sass=require("gulp-ruby-sass"),
     uglify=require("gulp-uglify"),
@@ -18,6 +19,12 @@ var gulp = require("gulp"),
                 livereload:true,
                 open:true
         }));
+    });
+
+    gulp.task("htmlmin", function () {
+        gulp.src('src/**/*.html')
+            .pipe(htmlmin())
+            .pipe(gulp.dest('dist'))
     });
     //注册任务，html文件拷贝到发布目录
     gulp.task("html",function(){
@@ -56,4 +63,9 @@ var gulp = require("gulp"),
             .pipe(jshint())
             .pipe(jshint.reporter("default"));
     });
-gulp.task("default",["sass","imagemin","js","script","html","webserver"]);
+    gulp.task('watch', function () {
+        gulp.watch('src/sass/*.scss',["sass"]);
+        gulp.watch("src/images/**/*.{png,jpg,gif,svg}",["imagemin"]);
+        gulp.watch('src/**/*.html',["htmlmin"]);
+    });
+gulp.task("default",["imagemin","js","script","webserver","watch"]);
