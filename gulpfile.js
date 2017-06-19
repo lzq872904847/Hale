@@ -75,4 +75,4 @@ var gulp = require("gulp"),
         gulp.watch("src/images/**/*.{png,jpg,gif,svg}",["imagemin"]);
         gulp.watch('src/**/*.html',["htmlmin"]);
     });
-gulp.task("default",["lib","json","js","script","webserver","watch"]);
+gulp.task("default",["lib","json","js","sass","html","script","webserver","watch"]);
