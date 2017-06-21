@@ -1,87 +1,39 @@
-@charset "UTF-8";
-@mixin WH($width,$height){
-  width: $width;
-  height: $height;
-}
-@mixin position($pos,$top,$left,$zIn){
-  position: $pos;
-  top: $top;
-  left: $left;
-  z-index: $zIn;
-}
-@mixin flex{
-  display: flex;
-  justify-content: space-around;
-}
-$bianjie:1px solid #C7C7C7;
-*{
-  margin: 0;
-  padding: 0;
-  font-family: "宋体";
-}
-ul{
-  list-style: none;
-}
-a{
-  text-decoration: none;
-  color: #303030;
-}
-a:hover{
-  text-decoration: underline;
-  color: #303030;
-}
-.red{
-  color: red;
-}
-.red:hover{
-  color: red;
-}
+@import "topAndBottom";
 .blue{
   color: #5FC1FD;
 }
 .blue:hover{
   color: #5FC1FD;
 }
-header{
- @include WH(100%,33px);
-  background-color: #F6F6F6;
-  border-bottom: $bianjie;
-}
-header nav{
-  @include WH(1200px,33px);
-  line-height: 33px;
-  margin: auto;
-}
-header ul,#navDiv ul{
+#navDiv ul{
   float: right;
 }
-header ul li,#navDiv ul li,#navDiv img,header span,header nav>a{
+#navDiv ul li,#navDiv img{
   float: left;
 }
-header li,header span,#navDiv li{
+#navDiv li{
   margin-right: 20px;
-}
-header span{
-  margin-left: 5px;
-}
-.urls{
-  margin-right: 0;
-  font-size: 16px;
-  color: #1b6d85;
 }
 #navDiv{
   @include WH(1200px,80px);
   margin: auto;
-  line-height: 80px;
+  line-height: 50px;
 }
 #navDiv li{
+  @include WH(100px,50px);
+  margin: 15px 0;
+  padding: 0 10px;
+  text-align: center;
   font-size: 18px;
+}
+#navDiv li:hover{
+  background-color: #F6F6F6;
 }
 #lunbo{
   @include WH(1200px,340px);
   margin: auto;
   position: relative;
-  top: -10px;
+  top: -20px;
 }
 #lunboShow{
   @include WH(235px,340px);
@@ -104,15 +56,40 @@ header span{
 }
 #lunboShow .lun{
   float: right;
-  margin-right: 30px;
+  margin-right: 10px;
   line-height: 85px;
 }
+#lunboShow .rightlun{
+  @include WH(15px,85px);
+  float: right;
+  text-align: right;
+  line-height: 85px;
+}
+#lunboShow .rightlun span{
+  display: none;
+  margin-right: -5px;
+}
 .lunboCenter{
-  width: 500px;
+  width: 700px;
   background-color: white;
-  height: 10px;
+  @include position(absolute,20px,235px,5);
+  border: 1px solid #185;
+}
+.lunboCenterDiv{
+  @include WH(130px,40px);
+  border: $bianjie;
+  margin-left: 15px;
+  margin-right: 15px;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 15px;
+  position: relative;
 }
 #bg{
+  width: 100%;
+  float: left;
+  //position: absolute;
   background-color: #F7F7F7;
 }
 #show{
@@ -140,6 +117,7 @@ header span{
 #centerDiv{
   width: 1200px;
   margin: auto;
+  //position: relative;
 }
 #centerLeft{
   width: 890px;
@@ -209,55 +187,4 @@ header span{
   font-size: 22px;
   text-align: center;
   line-height: 42px;
-}
-footer{
-  @include WH(100%,290px);
-  border-top: $bianjie;
-  background-color: #F7F7F7;
-  float: left;
-  text-align: center;
-  color: gray;
-}
-#footDiv{
-  @include WH(1200px,130px);
-  margin: auto;
-  margin-top: 25px;
-  border-bottom: $bianjie;
-  @include flex;
-  margin-bottom: 40px;
-}
-.footShow{
-  width: 180px;
-  float: left;
-}
-.footShow img{
-  float: left;
-}
-.footShow span{
-  font-size: 18px;
-  font-weight: bold;
-  float: left;
-  margin: 10px;
-}
-.footShow ul{
-  float: left;
-  font-size: 12px;
-  margin-left: 54px;
-}
-.footShow ul li{
-  text-align: left;
-  margin-top: 10px;
-}
-footer p{
-  margin-bottom: 10px;
-}
-footer span{
-  margin-right: 15px;
-}
-.footA{
-  color: gray;
-  margin-left: 40px;
-}
-.footA:hover{
-  color: gray;
 }
