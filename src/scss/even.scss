@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@mixin WH($width,$height){
+  width: $width;
+  height: $height;
+}
+@mixin position($pos,$top,$left,$zIn){
+  position: $pos;
+  top: $top;
+  left: $left;
+  z-index: $zIn;
+}
+@mixin flex{
+  display: flex;
+  justify-content: space-around;
+}
+$bianjie:1px solid #C7C7C7;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "宋体";
+}
+ul{
+  list-style: none;
+}
+@mixin san{
+  display: inline-block;
+  @include WH(0,0);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+@mixin bottomSan($color){
+  @include san;
+  border-top: 8px solid $color;
+}
+@mixin topSan($color){
+  @include san;
+  border-bottom: 8px solid $color;
+}
+@mixin leftSan($color){
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid $color;
+}

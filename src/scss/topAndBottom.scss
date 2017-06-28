@@ -1,0 +1,188 @@
+@import "even";
+a{
+  text-decoration: none;
+  color: #303030;
+}
+a:hover{
+  text-decoration: underline;
+  color: #303030;
+}
+.red{
+  color: red;
+}
+.red:hover{
+  color: red;
+}
+header{
+  @include WH(100%,33px);
+  background-color: #F6F6F6;
+  border-bottom: $bianjie;
+  position: relative;
+  z-index: 999;
+}
+#cutCity{
+  cursor: pointer;
+}
+#cutCity:hover{
+  text-decoration: underline;
+}
+header nav{
+  @include WH(1200px,33px);
+  line-height: 33px;
+  margin: auto;
+  position: relative;
+}
+header ul{
+  float: right;
+  position: relative;
+}
+header ul li,header span,header nav>a{
+  float: left;
+  position: relative;
+}
+header li,header span{
+  margin-right: 20px;
+}
+header span{
+  margin-left: 5px;
+}
+#navHelp{
+  width: 120px;
+  padding-left: 10px;
+  border: 1px solid #F6F6F6;
+  border-bottom: none;
+}
+.bottomTriangle{
+  @include bottomSan(#C7C7C7);
+}
+.topTriangle{
+  @include topSan(#C7C7C7);
+}
+#navHelp div{
+  width: 100px;
+  display: none;
+}
+#navCity{
+  width: 500px;
+  @include position(absolute,33px,0,11);
+  border: $bianjie;
+  border-top: none;
+  background-color: #F7F7F7;
+  display: none;
+}
+#navCity>p{
+  @include WH(485px,30px);
+  line-height: 30px;
+}
+#navCity>p button{
+  @include WH(70px,25px);
+  line-height: 10px;
+  float: right;
+  margin-top: 5px;
+}
+#navCity>p .glyphicon{
+  @include WH(15px,25px);
+  position: absolute;
+  right: -5px;
+  top: 10px;
+}
+#cityDiv{
+  width: 470px;
+  float: left;
+  margin:0 10px 10px 10px;
+  border: $bianjie;
+  background-color: white;
+}
+#cityDiv div{
+  width: 470px;
+  float: left;
+  margin: 5px 0;
+}
+#cityDiv div>span{
+  width: 40px;
+  float: left;
+  margin: 0 10px;
+}
+#cityDiv ul{
+  width: 410px;
+  float: left;
+}
+#cityDiv li{
+  float: left;
+  margin-right: 20px;
+  font-size: 8px;
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+#cityDiv li:hover{
+  color: red;
+  text-decoration: underline;
+}
+.city{
+  display: none;
+}
+#zimu li{
+  @include WH(17px,22px);
+  line-height: 22px;
+  margin-right: 0;
+  border-bottom: $bianjie;
+  border-radius: 3px 3px 0 0;
+  text-align: center;
+}
+.urls{
+  margin-right: 0;
+  font-size: 16px;
+  color: #1b6d85;
+}
+footer{
+  @include WH(100%,290px);
+  border-top: $bianjie;
+  background-color: #F7F7F7;
+  float: left;
+  text-align: center;
+  color: gray;
+}
+#footDiv{
+  @include WH(1200px,130px);
+  margin: auto;
+  margin-top: 25px;
+  border-bottom: $bianjie;
+  @include flex;
+  margin-bottom: 40px;
+}
+.footShow{
+  width: 180px;
+  float: left;
+}
+.footShow img{
+  float: left;
+}
+.footShow span{
+  font-size: 18px;
+  font-weight: bold;
+  float: left;
+  margin: 10px;
+}
+.footShow ul{
+  float: left;
+  font-size: 12px;
+  margin-left: 54px;
+}
+.footShow ul li{
+  text-align: left;
+  margin-top: 10px;
+}
+footer p{
+  margin-bottom: 10px;
+}
+footer span{
+  margin-right: 15px;
+}
+.footA{
+  color: gray;
+  margin-left: 40px;
+}
+.footA:hover{
+  color: gray;
+}

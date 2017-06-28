@@ -1,0 +1,232 @@
+@import "topAndBottom";
+#navDiv ul{
+  position: absolute;
+  right: 0;
+}
+#navDiv ul li,#navDiv img{
+  float: left;
+  position: relative;
+}
+#navDiv li{
+  margin-right: 20px;
+}
+#navDiv{
+  @include WH(1200px,80px);
+  margin: auto;
+  line-height: 50px;
+  position: relative;
+  z-index: 3;
+}
+#navDiv li{
+  @include WH(100px,50px);
+  margin: 15px 0;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 18px;
+}
+#navDiv li:hover{
+  background-color: #F6F6F6;
+}
+.hot{
+  top: 18px;
+  left: 320px;
+}
+#lunbo{
+  @include WH(1200px,340px);
+}
+#lunboShow{
+  @include WH(235px,340px);
+  @include position(absolute,0,0,1);
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+}
+#lunboShow div{
+  @include WH(235px,85px);
+  line-height: 85px;
+  border-bottom: $bianjie;
+}
+#lunboShow img{
+  opacity: 0.6;
+  float: left;
+  margin: 4px 15px 0 10px;
+}
+.leftTriangle{
+  @include leftSan(white);
+  float: right;
+  margin: 38px -1px 0 15px;
+  visibility: hidden;
+}
+.rightlun{
+  @include WH(45px,85px);
+  font-size: 30px;
+  float: right;
+  text-align: right;
+  line-height: 85px;
+}
+#lunboCenter{
+  width: 700px;
+  background-color: white;
+  @include position(absolute,0,235px,15);
+  border: 1px solid #185;
+  display: none;
+}
+#lunboCenter div{
+  float: left;
+}
+#bg{
+  width: 100%;
+  float: left;
+  background-color: #F7F7F7;
+}
+#show{
+  @include WH(1200px,166px);
+  margin: auto;
+}
+.showDiv{
+  @include WH(1200px,301px);
+  margin: auto;
+}
+#show div,.showDiv div{
+  border-right: $bianjie;
+  float: left;
+}
+.showDiv div{
+  @include WH(199px,301px);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  background-color: white;
+}
+.shopP{
+  @include WH(1200px,50px);
+  margin: auto;
+  margin-top: 18px;
+  line-height: 50px;
+  font-size: 24px;
+}
+#centerDiv{
+  width: 1200px;
+  margin: auto;
+}
+#centerLeft{
+  width: 890px;
+  margin-right: 40px;
+  float: left;
+  margin-bottom: 20px;
+}
+#site{
+  @include WH(890px,42px);
+  margin: 20px 0;
+  position: relative;
+}
+.bottomTriangleCity{
+  @include bottomSan(#185);
+  float: right;
+  margin: 15px 15px 0 0;
+}
+.topTriangleCity{
+  @include topSan(#185);
+  float: right;
+  margin: 15px 15px 0 0;
+}
+#province,#county{
+  @include WH(110px,40px);
+  border: 1px solid #185;
+  float: left;
+  margin-right: 8px;
+  line-height: 40px;
+  padding-left: 10px;
+}
+#site input{
+  @include WH(470px,40px);
+  border: 1px solid #185;
+  float: left;
+  padding-left: 15px;
+}
+#siteS{
+  @include WH(120px,42px);
+  border: none;
+  background-color: #185;
+  float: left;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+#sort{
+  @include WH(888px,42px);
+  border: $bianjie;
+  line-height: 42px;
+  background-color: #F7F7F7;
+}
+.sortDiv,.sortDivs{
+  @include WH(120px,40px);
+  float: left;
+  border: 1px solid rgba(0,0,0,0);
+  text-align: center;
+}
+.chechDiv{
+  @include WH(120px,40px);
+  float: left;
+}
+.sortDivs{
+  border-left: none;
+}
+#map{
+  @include WH(120px,22px);
+  float: right;
+  margin: 10px;
+}
+#shopShow{
+  width: 890px;
+  margin-right: 40px;
+  float: left;
+}
+.shop {
+  @include WH(100%,136px);
+  display: flex;
+  padding-top: 25px;
+  margin-top: 20px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.shop img {
+  @include WH(92px,92px);
+  margin-right: 10px;
+}
+.info {
+  width: 550px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.shop li p {
+  line-height: 21px;
+  font-size: 17px;
+  color: #9d9d9d;
+}
+.shopLi {
+  margin:0 20px;
+}
+.in {
+  @include WH(150px,50px);
+  border: 1px solid #118855;
+  color: #118855;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  display: none;
+  margin-top: 15px;
+}
+#centerRight{
+  width: 270px;
+  float: right;
+  margin-top: 82px;
+}
+#evaluate{
+  @include WH(268px,42px);
+  float: right;
+  border: $bianjie;
+  background-color: #F7F7F7;
+  font-size: 22px;
+  text-align: center;
+  line-height: 42px;
+}
